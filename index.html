@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ระบบวิเคราะห์ความเข้มข้นเลือด</title>
+  <link rel="icon" href="https://www.example.com/icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>ระบบวิเคราะห์ความเข้มข้นเลือด</h1>
+
+    <label for="imageInput" id="uploadLabel" class="custom-file-upload">เลือกรูปภาพภายในเครื่อง</label>
+    <input type="file" id="imageInput" accept="image/*" style="display:none;">
+
+    <button id="cameraButton">ถ่ายภาพใหม่ด้วยตัวเอง</button>
+    <button id="switchCameraButton" style="display: none;">สลับกล้อง</button>
+    <button id="backButton" style="display:none;">ย้อนกลับ</button>
+
+    <div id="cameraContainer" style="display: none;">
+      <video id="cameraStream" autoplay></video>
+      <button id="captureButton">ถ่ายภาพ</button>
+    </div>
+
+    <div class="image-preview" id="imagePreview">
+      <p>ยังไม่ได้เลือกรูปภาพ</p>
+    </div>
+
+    <button id="predictButton" disabled>วิเคราะห์</button>
+    <div id="result"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <script src="script.js"></script>
+</body>
+</html>
